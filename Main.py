@@ -30,11 +30,17 @@ print 'Hello ', name, 'welcome to your destiny!'
 game = True
 
 choiceCounter = 0
-choice1Array = ['Begin your journy']
-choice2Array = ['Wimp out like a lame person']
+choice1Array = ['Begin your journy',
+                'Equip yourself']
 
-choice1ResponseArray = ['Horray!']
-choice2ResponseArray = ['You suck!!!']
+choice2Array = ['Wimp out like a lame person',
+                'Get going']
+
+choice1ResponseArray = ['Horray!' ,
+                        '{store}']
+                        
+choice2ResponseArray = ['You suck!!!',
+                        'You\'re heading out of town']
 
 while game:
 
