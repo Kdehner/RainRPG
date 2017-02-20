@@ -16,6 +16,9 @@
 
 # Starting game logic here to prevent collisions
 
+# Import files
+from Store import storeClass
+
 # Intro text
 print 'You are the one and only hero!'
 print 'Destined to save the great land of Rain!'
@@ -38,7 +41,7 @@ choice2Array = ['Wimp out like a lame person',
 
 choice1ResponseArray = ['Horray!' ,
                         '{store}']
-                        
+
 choice2ResponseArray = ['You suck!!!',
                         'You\'re heading out of town']
 
@@ -63,8 +66,12 @@ while game:
         quit()
     else:
         if userChoice == '1':
-            print choice1ResponseArray[choiceCounter]
-            choiceCounter += 1
+            if choice1ResponseArray[choiceCounter] == '{store}':
+                new_store = storeClass()
+                new_store.createStore()
+            else:
+                print choice1ResponseArray[choiceCounter]
+                choiceCounter += 1
         else:
             print choice2ResponseArray[choiceCounter]
             choiceCounter += 1
