@@ -38,6 +38,12 @@ choice2ResponseArray = ['You suck!!!']
 
 while game:
 
+    # If there are no more choices
+    if choiceCounter >= len(choice1Array):
+        game = False
+        print 'Game over'
+        quit()
+
     print 'Oh mighty hero, will you?'
     print '1)', choice1Array[choiceCounter]
     print '2)', choice2Array[choiceCounter]
@@ -45,6 +51,7 @@ while game:
 
     # User should be able to choose between two choices
     userChoice = raw_input('What will you decide: ')
+
 
     if userChoice == 'quit':
         quit()
