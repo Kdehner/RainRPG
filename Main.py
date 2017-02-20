@@ -5,5 +5,5 @@ while True:
     print 'Please grace us with your name hero!'
     print
     name = raw_input('Enter your name: ')
-    print 'Hello ', name, '!' ' Welcome to your destiny!'
+    print 'Hello ', name, 'welcome to your destiny!'
     quit()
