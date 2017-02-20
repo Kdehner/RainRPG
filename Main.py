@@ -34,18 +34,19 @@ choice2 = "Wimp out like a lame person"
 
 while game:
 
-    print Oh mighty hero, will you?
+    print 'Oh mighty hero, will you?'
     print '1)', choice1
     print '2)', choice2
     print
 
     # User should be able to choose between two choices
-        userChoice = raw_input('What will you decide: ')
+    userChoice = raw_input('What will you decide: ')
 
     if userChoice == 'quit':
         quit()
-    else if userChoice == '1'
-        print 'Horray!'
-    else userChoice == '2'
-        print 'You suck!!!'
-        quit()
+    else:
+        if userChoice == '1':
+            print 'Horray!'
+        else:
+            print 'You suck!!!'
+            quit()
