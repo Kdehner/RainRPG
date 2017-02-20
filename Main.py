@@ -6,3 +6,4 @@ while True:
     print
     name = raw_input('Enter your name: ')
     print 'Hello ', name, '!' ' Welcome to your destiny!'
+    quit()
