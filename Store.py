@@ -1,4 +1,8 @@
 class storeClass:
 
     def createStore(self):
-        print 'store!!!!!!'
+        print '+------------------------------------+'
+        print '|        Welcome to the store!       |'
+        print '+------------------------------------+'
+        print
+        userChoice = raw_input('What do you want?: ')
