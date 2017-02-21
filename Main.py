@@ -18,6 +18,11 @@
 
 # Import files
 from Store import storeClass
+import os
+
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')
+
 
 # Intro text
 f = open('Intro.txt', 'r')
@@ -45,7 +50,8 @@ choice2ResponseArray = ['You suck!!!',
                         'You\'re heading out of town']
 
 while game:
-
+    # clear the screen
+    cls()
     # If there are no more choices
     if choiceCounter >= len(choice1Array):
         game = False
@@ -64,6 +70,8 @@ while game:
     if userChoice == 'quit':
         quit()
     else:
+        # clear the screen
+        cls()
         if userChoice == '1':
             if choice1ResponseArray[choiceCounter] == '{store}':
                 new_store = storeClass()
