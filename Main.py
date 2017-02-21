@@ -24,10 +24,13 @@ def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
 
+# Open Text Files
+introtxt = open('Intro.txt', 'r')
+
 # Intro text
-f = open('Intro.txt', 'r')
-for line in f:
+for line in introtxt:
     print line,
+introtxt.close()
 
 # Get user name
 name = raw_input('Enter your name: ')
