@@ -20,14 +20,13 @@
 from Store import storeClass
 
 # Intro text
-print 'You are the one and only hero!'
-print 'Destined to save the great land of Rain!'
-print 'Please grace us with your name hero!'
-print
+f = open('Intro.txt', 'r')
+for line in f:
+    print line,
 
 # Get user name
 name = raw_input('Enter your name: ')
-print 'Hello ', name, 'welcome to your destiny!'
+print 'Hello {} welcome to your destiny!'.format(name)
 
 # Define globals
 game = True
