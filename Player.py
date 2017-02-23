@@ -1,8 +1,8 @@
 class playerClass:
 
-    def __init__(self, itemName, itemSlot):
+    def __init__(self, itemName, itemType):
         self.itemName = itemName
-        self.itemSlot = itemSlot
+        self.itemType = itemType
 
 
     health = 100
