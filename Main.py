@@ -20,6 +20,11 @@
 from Store import storeClass, Item
 import os
 
+from Player import PlayerClass
+from Store import Item
+i = Item("Sword", "offence", 100)
+playerClass().obtain_item(i)
+
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
