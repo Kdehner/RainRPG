@@ -1,9 +1,8 @@
 class playerClass:
 
-    def __init__(self, itemName, itemType):
-        self.itemName = itemName
-        self.itemType = itemType
+from store import Item
 
+item = Item
 
     health = 100
     gold = 10
