@@ -12,3 +12,5 @@ item = Item
 
     armor = [('', 'Head'), ('', 'Sholders'), ('', 'Chest'), ('', 'Hands') ('', 'Legs'), ('', 'Feet')]
     weapon = [('', 'Main Hand'), ('', 'OffHand')]
+
+    

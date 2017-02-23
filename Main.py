@@ -17,7 +17,7 @@
 # Starting game logic here to prevent collisions
 
 # Import files
-from Store import storeClass
+from Store import storeClass, Item
 import os
 
 def cls():
@@ -79,6 +79,10 @@ while game:
             if choice1ResponseArray[choiceCounter] == '{store}':
                 new_store = storeClass()
                 new_store.createStore()
+                new_item = new_store.get_purchased_item()
+                print new_item.itemType
+                userChoice = raw_input('What will you decide: ')
+
             else:
                 print choice1ResponseArray[choiceCounter]
                 choiceCounter += 1

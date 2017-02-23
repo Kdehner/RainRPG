@@ -6,6 +6,7 @@ class Item(object):
         self.cost = cost
 
 class storeClass:
+    purchased_item = None
 
     # Set up length vars
     itemCellWidth = 10;
@@ -31,6 +32,12 @@ class storeClass:
 
         if len(str(item.cost)) > costCellWidth:
             costCellWidth = len(str(item.cost))
+
+    def set_purchased_item(self, item):
+        self.purchased_item = item
+
+    def get_purchased_item(self):
+        return self.purchased_item
 
     def createStore(self):
 
@@ -68,3 +75,4 @@ class storeClass:
         print
 
         userChoice = raw_input('Make a selection: ')
+        self.set_purchased_item(self.itemList[0])   
