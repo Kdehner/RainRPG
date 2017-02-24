@@ -12,8 +12,9 @@ class PlayerClass:
     #weapon = [('', 'Main Hand'), ('', 'OffHand')]
 
     def obtain_item(self, item):
-        cost = Item.cost
-        if cost >= gold:
-            items.appaned(item)
+        cost = item.cost
+        if cost >= self.gold:
+            self.items.append(item)
+            self.gold - cost
         else:
             print "You do not have enough gold to purchase this item"

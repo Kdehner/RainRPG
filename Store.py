@@ -75,4 +75,4 @@ class storeClass:
         print
 
         userChoice = raw_input('Make a selection: ')
-        self.set_purchased_item(self.itemList[0])   
+        self.set_purchased_item(self.itemList[0])
