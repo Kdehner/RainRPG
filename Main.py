@@ -18,7 +18,10 @@
 
 # Import files
 from Store import storeClass, Item
+from Input import UserInputClass
 import os
+
+user_input = UserInputClass().user_input
 
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
@@ -32,7 +35,7 @@ for line in introtxt:
 introtxt.close()
 
 # Get user name
-name = raw_input('Enter your name: ')
+name = user_input('Enter your name: ')
 print 'Hello {} welcome to your destiny!'.format(name)
 
 # Define globals
@@ -66,7 +69,7 @@ while game:
     print
 
     # User should be able to choose between two choices
-    userChoice = raw_input('What will you decide: ')
+    userChoice = user_input('What will you decide: ')
 
 
     if userChoice == 'quit':
@@ -80,7 +83,7 @@ while game:
                 new_store.createStore()
                 new_item = new_store.get_purchased_item()
                 print new_item.itemType
-                userChoice = raw_input('What will you decide: ')
+                userChoice = user_input('What will you decide: ')
 
             else:
                 print choice1ResponseArray[choiceCounter]
