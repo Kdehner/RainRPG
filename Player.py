@@ -32,3 +32,7 @@ class PlayerClass:
         #If item is defence add defence point
         elif item_purchased is True and item_type is 'defence':
             self.defence += 1
+
+    def log_health(self):
+        print 'Health'
+        print '❤️' * self.health
