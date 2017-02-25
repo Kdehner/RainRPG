@@ -45,8 +45,7 @@ class storeClass:
         totalWidth = self.itemCellWidth + self.typeCellWidth + self.costCellWidth + 8
 
         welcomeMessage = "Welcome to the Shop!"
-        total_gold = "Total Gold: " + str(self.PlayerClass().gold)
-        total_gold_margin = ((totalWidth - len(total_gold))/2)
+        total_gold = "Player Gold: " + str(self.PlayerClass().gold)
         welcomeMargin = ((totalWidth - len(welcomeMessage))/2)
         oddRound = 0 if totalWidth % 2 == 0 else 1
 
@@ -55,8 +54,8 @@ class storeClass:
         print '|' + ' ' * totalWidth + '|'
         print '|' + (' ' *  welcomeMargin) + welcomeMessage + (' ' *  (welcomeMargin + oddRound)) + '|'
         print '|' + ' ' * totalWidth + '|'
-        print '|' + (' ' *  total_gold_margin) + total_gold + (' ' *  (total_gold_margin + oddRound)) + '|'
-        print '|' + ' ' * totalWidth + '|'
+        print '+' + '-' * totalWidth + '+'
+        print '| ' + total_gold + ' ' * (totalWidth - len(total_gold) - 1) + '|'
         print '+' + '-' * totalWidth + '+'
 
         # Print column headers
