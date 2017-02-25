@@ -1,7 +1,7 @@
 class PlayerClass:
 
     health = 98
-    gold = 1000
+    gold = 100
     attack = 1
     defence = 1
     items = []
