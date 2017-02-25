@@ -18,7 +18,10 @@
 
 # Import files
 from Store import storeClass, Item
+from Input import UserInputClass
 import os
+
+user_input = UserInputClass().user_input
 
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
@@ -32,7 +35,7 @@ for line in introtxt:
 introtxt.close()
 
 # Get user name
-name = raw_input('Enter your name: ')
+name = user_input('Enter your name: ')
 print 'Hello {} welcome to your destiny!'.format(name)
 
 # Define globals
