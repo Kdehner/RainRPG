@@ -23,7 +23,6 @@ import os
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
-
 # Open Text Files
 introtxt = open('Intro.txt', 'r')
 
