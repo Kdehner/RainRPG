@@ -6,6 +6,7 @@ class Item(object):
         self.cost = cost
 
 class storeClass:
+    from Player import PlayerClass
     purchased_item = None
 
     # Set up length vars
@@ -76,3 +77,4 @@ class storeClass:
 
         userChoice = raw_input('Make a selection: ')
         self.set_purchased_item(self.itemList[0])
+        self.PlayerClass().obtain_item(self.purchased_item)
