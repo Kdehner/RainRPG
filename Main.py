@@ -69,7 +69,7 @@ while game:
     print
 
     # User should be able to choose between two choices
-    userChoice = raw_input('What will you decide: ')
+    userChoice = user_input('What will you decide: ')
 
 
     if userChoice == 'quit':
@@ -83,7 +83,7 @@ while game:
                 new_store.createStore()
                 new_item = new_store.get_purchased_item()
                 print new_item.itemType
-                userChoice = raw_input('What will you decide: ')
+                userChoice = user_input('What will you decide: ')
 
             else:
                 print choice1ResponseArray[choiceCounter]

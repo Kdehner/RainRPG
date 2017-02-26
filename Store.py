@@ -7,6 +7,9 @@ class Item(object):
 
 class storeClass:
     from Player import PlayerClass
+    from Input import UserInputClass
+
+    user_input = UserInputClass().user_input
     purchased_item = None
 
     # Set up length vars
@@ -78,6 +81,6 @@ class storeClass:
         print '+' + '-' * totalWidth + '+'
         print
 
-        userChoice = raw_input('Make a selection: ')
+        userChoice = self.user_input('Make a selection: ')
         self.set_purchased_item(self.itemList[0])
         self.PlayerClass().obtain_item(self.purchased_item)
