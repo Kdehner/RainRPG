@@ -53,7 +53,7 @@ while game:
     print
 
     # User should be able to choose between two choices
-    userChoice = raw_input('What will you decide: ')
+    userChoice = user_input('What will you decide: ')
 
 
     if userChoice == 'quit':
@@ -71,7 +71,6 @@ while game:
                 p.log_person()
 
                 userChoice = raw_input('What will you decide: ')
-
             else:
                 print choice1ResponseArray[choiceCounter]
                 choiceCounter += 1
