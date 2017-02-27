@@ -1,6 +1,7 @@
+# coding=UTF-8
 class PlayerClass:
 
-    health = 98
+    health = 20
     gold = 100
     attack = 1
     defence = 1
@@ -34,5 +35,72 @@ class PlayerClass:
             self.defence += 1
 
     def log_health(self):
-        print 'Health'
-        print '❤️' * self.health
+        print 'Health' + '♥︎' * self.health
+
+    def log_gold(self):
+        print 'Gold' + self.gold
+
+    def log_stats(self):
+        print 'Attack: ' + self.attack
+        print 'Defence: ' + self.defence
+
+    def log_person(self):
+        log_person_width = 20
+
+        log_attack = 'Attack: ' + str(self.attack)
+        log_defence = 'Defence: ' + str(self.defence)
+        log_gold = 'Gold: ' + str(self.gold)
+        log_health = 'Health: ' + '>' * self.health
+
+        log_list = []
+        log_list.append(log_attack)
+        log_list.append(log_defence)
+        log_list.append(log_gold)
+        log_list.append(log_health)
+
+        for log in log_list:
+            if len(log) > log_person_width:
+                log_person_width = len(log)
+
+
+        log_title = 'Player Stats'
+
+        print '+-' + '-' * log_person_width + '-+'
+        print '| ' + log_title + ' ' * (log_person_width - len(log_title)) + ' |'
+        print '| ' + ' ' * log_person_width + ' |'
+
+        for log in log_list:
+            print '| ' + log + ' ' * (log_person_width - len(log)) + ' |'
+
+        print '+-' + '-' * log_person_width + '-+'
+
+    def log_items(self):
+
+        # Set up length vars
+        itemCellWidth = 10;
+        typeCellWidth = 10;
+
+        # Calculate lengths
+        for item in self.items:
+            if len(item.itemName) > itemCellWidth:
+                itemCellWidth = len(item.itemName)
+
+            if len(item.itemType) > typeCellWidth:
+                typeCellWidth = len(item.itemType)
+
+        tTitle = 'Title' + ' ' * (itemCellWidth - len('Title'))
+        tType = 'Type' + ' ' * (typeCellWidth - len('Type'))
+
+        titles = '| ' + tTitle + ' | ' + tType + ' |'
+
+        print '+' + '-' * len(titles) + '+'
+        print titles
+
+        # Print item list
+        for item in self.items:
+            iName = item.itemName + ' ' * (itemCellWidth - len(item.itemName))
+            iType = item.itemType + ' ' * (typeCellWidth - len(item.itemType))
+
+            print '| ' + iName + ' | ' + iType + ' |'
+
+        print '+' + '-' * len(titles) + '+'

@@ -1,24 +1,8 @@
-
-# while True:
-#     print 'You are the one and only hero!'
-#     print 'Destined to save the great land of Rain!'
-#     print 'Please grace us with your name hero!'
-#     print
-#     name = raw_input('Enter your name: ')
-#     print 'Hello ', name, 'welcome to your destiny!'
-#     quit()
-
-
-
-
-
-
-
-# Starting game logic here to prevent collisions
-
+# coding=UTF-8
 # Import files
 from Store import storeClass, Item
 from Input import UserInputClass
+from Player import PlayerClass
 import os
 
 user_input = UserInputClass().user_input
@@ -82,7 +66,10 @@ while game:
                 new_store = storeClass()
                 new_store.createStore()
                 new_item = new_store.get_purchased_item()
-                print new_item.itemType
+                p = PlayerClass()
+                p.log_items()
+                p.log_person()
+
                 userChoice = raw_input('What will you decide: ')
 
             else:
