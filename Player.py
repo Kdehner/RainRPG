@@ -98,8 +98,8 @@ class PlayerClass:
 
         # Print item list
         for item in self.items:
-            iName = item.itemName + ' ' * (itemCellWidth - len(item.itemName))
-            iType = item.itemType + ' ' * (typeCellWidth - len(item.itemType))
+            iName = item.itemName + ' ' * (itemCellWidth - len(item.itemName) + 1)
+            iType = item.itemType + ' ' * (typeCellWidth - len(item.itemType) + 1)
 
             print '| ' + iName + ' | ' + iType + ' |'
 
