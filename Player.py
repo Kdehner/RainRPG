@@ -12,15 +12,15 @@ class PlayerClass:
 
     #When purchasing an item check player gold vs. cost of item and add appropriate buffs.
     def obtain_item(self, item):
-        item_name = item.itemName
-        item_type = item.itemType
+        item_name = item.item_name
+        item_type = item.item_type
         item_cost = item.cost
         item_purchased = False
 
         if item_cost <= self.gold:
             self.items.append(item)
             self.gold -= item_cost
-            print item.itemName, "was purchased!"
+            print item.item_name, "was aquired!"
             item_purchased = True
         else:
             print "You do not have enough gold to purchase this item"
@@ -35,10 +35,10 @@ class PlayerClass:
             self.defence += 1
 
     def log_health(self):
-        print 'Health' + '♥︎' * self.health
+        print 'Health: ' + 'V' * self.health
 
     def log_gold(self):
-        print 'Gold' + self.gold
+        print 'Gold: ' + self.gold
 
     def log_stats(self):
         print 'Attack: ' + self.attack
@@ -50,7 +50,7 @@ class PlayerClass:
         log_attack = 'Attack: ' + str(self.attack)
         log_defence = 'Defence: ' + str(self.defence)
         log_gold = 'Gold: ' + str(self.gold)
-        log_health = 'Health: ' + '>' * self.health
+        log_health = 'Health: ' + 'V' * self.health
 
         log_list = []
         log_list.append(log_attack)
@@ -82,11 +82,11 @@ class PlayerClass:
 
         # Calculate lengths
         for item in self.items:
-            if len(item.itemName) > itemCellWidth:
-                itemCellWidth = len(item.itemName)
+            if len(item.item_name) > itemCellWidth:
+                itemCellWidth = len(item.item_name)
 
-            if len(item.itemType) > typeCellWidth:
-                typeCellWidth = len(item.itemType)
+            if len(item.item_type) > typeCellWidth:
+                typeCellWidth = len(item.item_type)
 
         tTitle = 'Title' + ' ' * (itemCellWidth - len('Title'))
         tType = 'Type' + ' ' * (typeCellWidth - len('Type'))
@@ -98,8 +98,8 @@ class PlayerClass:
 
         # Print item list
         for item in self.items:
-            iName = item.itemName + ' ' * (itemCellWidth - len(item.itemName) + 1)
-            iType = item.itemType + ' ' * (typeCellWidth - len(item.itemType) + 1)
+            iName = item.item_name + ' ' * (itemCellWidth - len(item.item_name) + 1)
+            iType = item.item_type + ' ' * (typeCellWidth - len(item.item_type) + 1)
 
             print '| ' + iName + ' | ' + iType + ' |'
 
