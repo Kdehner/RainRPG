@@ -91,16 +91,17 @@ class PlayerClass:
         tTitle = 'Title' + ' ' * (itemCellWidth - len('Title'))
         tType = 'Type' + ' ' * (typeCellWidth - len('Type'))
 
-        titles = '| ' + tTitle + ' | ' + tType + ' |'
+        titles = '| ' + tTitle + '| ' + tType + '|'
 
-        print '+' + '-' * len(titles) + '+'
+        print '+' + '-' * (len(titles) - 2) + '+'
         print titles
+        print '+' + '-' * (len(titles) - 2) + '+'
 
         # Print item list
         for item in self.items:
-            iName = item.item_name + ' ' * (itemCellWidth - len(item.item_name) + 1)
-            iType = item.item_type + ' ' * (typeCellWidth - len(item.item_type) + 1)
+            iName = item.item_name + ' ' * (itemCellWidth - len(item.item_name))
+            iType = item.item_type + ' ' * (typeCellWidth - len(item.item_type))
 
-            print '| ' + iName + ' | ' + iType + ' |'
+            print '| ' + iName + '| ' + iType + '|'
 
-        print '+' + '-' * len(titles) + '+'
+        print '+' + '-' * (len(titles) - 2) + '+'

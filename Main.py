@@ -25,6 +25,8 @@ print 'Hello {} welcome to your destiny!'.format(name)
 # Define globals
 game = True
 
+p = PlayerClass()
+
 choiceCounter = 0
 choice1Array = ['Begin your journy',
                 'Equip yourself']
@@ -56,7 +58,7 @@ while game:
     userChoice = user_input('What will you decide: ')
 
 
-    if userChoice == 'quit':
+    if userChoice == 'q':
         quit()
     else:
         # clear the screen
