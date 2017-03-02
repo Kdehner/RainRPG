@@ -1,8 +1,8 @@
 class Item(object):
     #__init__() functions as the class constructor
-    def __init__(self, itemName=None, itemType=None, cost=None):
-        self.itemName = itemName
-        self.itemType = itemType
+    def __init__(self, item_name=None, item_type=None, cost=None):
+        self.item_name = item_name
+        self.item_type = item_type
         self.cost = cost
 
 class storeClass:
@@ -13,29 +13,29 @@ class storeClass:
     purchased_item = None
 
     # Set up length vars
-    itemCellWidth = 10;
-    typeCellWidth = 10;
-    costCellWidth = 10;
+    item_cell_width = 10;
+    type_cell_width = 10;
+    cost_cell_width = 10;
 
     # Create item list
-    itemList = []
-    itemList.append(Item("Sword", "offence", 100))
-    itemList.append(Item("Shield", "defence", 200))
-    itemList.append(Item("Potion", "consumable", 300))
-    itemList.append(Item("Lance", "offence", 100))
-    itemList.append(Item("Super Awesome Sharp Thing", "offence", 2000))
-    itemList.append(Item("The Unbreakable Wall", "offence", 300000))
+    item_list = []
+    item_list.append(Item("Sword", "offence", 100))
+    item_list.append(Item("Shield", "defence", 200))
+    item_list.append(Item("Potion", "consumable", 300))
+    item_list.append(Item("Lance", "offence", 100))
+    item_list.append(Item("Super Awesome Sharp Thing", "offence", 2000))
+    item_list.append(Item("The Unbreakable Wall", "offence", 300000))
 
     # Calculate lengths
-    for item in itemList:
-        if len(item.itemName) > itemCellWidth:
-            itemCellWidth = len(item.itemName)
+    for item in item_list:
+        if len(item.item_name) > item_cell_width:
+            item_cell_width = len(item.item_name)
 
-        if len(item.itemType) > typeCellWidth:
-            typeCellWidth = len(item.itemType)
+        if len(item.item_type) > type_cell_width:
+            type_cell_width = len(item.item_type)
 
-        if len(str(item.cost)) > costCellWidth:
-            costCellWidth = len(str(item.cost))
+        if len(str(item.cost)) > cost_cell_width:
+            cost_cell_width = len(str(item.cost))
 
     def set_purchased_item(self, item):
         self.purchased_item = item
@@ -45,42 +45,42 @@ class storeClass:
 
     def createStore(self):
 
-        totalWidth = self.itemCellWidth + self.typeCellWidth + self.costCellWidth + 8
+        total_width = self.item_cell_width + self.type_cell_width + self.cost_cell_width + 8
 
-        welcomeMessage = "Welcome to the Shop!"
+        welcome_message = "Welcome to the Shop!"
         total_gold = "Player Gold: " + str(self.PlayerClass().gold)
-        welcomeMargin = ((totalWidth - len(welcomeMessage))/2)
-        oddRound = 0 if totalWidth % 2 == 0 else 1
+        welcome_margin = ((total_width - len(welcome_message))/2)
+        odd_round = 0 if total_width % 2 == 0 else 1
 
         # Print store welcome banner
-        print '+' + '-' * totalWidth + '+'
-        print '|' + ' ' * totalWidth + '|'
-        print '|' + (' ' *  welcomeMargin) + welcomeMessage + (' ' *  (welcomeMargin + oddRound)) + '|'
-        print '|' + ' ' * totalWidth + '|'
-        print '+' + '-' * totalWidth + '+'
-        print '| ' + total_gold + ' ' * (totalWidth - len(total_gold) - 1) + '|'
-        print '+' + '-' * totalWidth + '+'
+        print '+' + '-' * total_width + '+'
+        print '|' + ' ' * total_width + '|'
+        print '|' + (' ' *  welcome_margin) + welcome_message + (' ' *  (welcome_margin + odd_round)) + '|'
+        print '|' + ' ' * total_width + '|'
+        print '+' + '-' * total_width + '+'
+        print '| ' + total_gold + ' ' * (total_width - len(total_gold) - 1) + '|'
+        print '+' + '-' * total_width + '+'
 
         # Print column headers
-        tTitle = 'Title' + ' ' * (self.itemCellWidth - len('Title'))
-        tType = 'Type' + ' ' * (self.typeCellWidth - len('Type'))
-        tCost = 'Cost' + ' ' * (self.costCellWidth - len('Cost'))
+        tTitle = 'Title' + ' ' * (self.item_cell_width - len('Title'))
+        tType = 'Type' + ' ' * (self.type_cell_width - len('Type'))
+        tCost = 'Cost' + ' ' * (self.cost_cell_width - len('Cost'))
 
         print '| ' + tTitle + ' | ' + tType + ' | ' + tCost + ' |'
 
-        print '+' + '-' * totalWidth + '+'
+        print '+' + '-' * total_width + '+'
 
         # Print item list
-        for item in self.itemList:
-            iName = item.itemName + ' ' * (self.itemCellWidth - len(item.itemName))
-            iType = item.itemType + ' ' * (self.typeCellWidth - len(item.itemType))
-            iCost = str(item.cost) + ' ' * (self.costCellWidth - len(str(item.cost)))
+        for item in self.item_list:
+            iName = item.item_name + ' ' * (self.item_cell_width - len(item.item_name))
+            iType = item.item_type + ' ' * (self.type_cell_width - len(item.item_type))
+            iCost = str(item.cost) + ' ' * (self.cost_cell_width - len(str(item.cost)))
 
             print '| ' + iName + ' | ' + iType + ' | ' + iCost + ' |'
 
-        print '+' + '-' * totalWidth + '+'
+        print '+' + '-' * total_width + '+'
         print
 
-        userChoice = self.user_input('Make a selection: ')
-        self.set_purchased_item(self.itemList[0])
+        user_choice = self.user_input('Make a selection: ')
+        self.set_purchased_item(self.item_list[0])
         self.PlayerClass().obtain_item(self.purchased_item)
