@@ -34,8 +34,31 @@ choice1ResponseArray = ['Horray!' ,
 choice2ResponseArray = ['You suck!!!',
                         'You\'re heading out of town']
 
+narritive_dictionary = [
+            [
+                [
+                    'Begin your journy',
+                    'Wimp out like a lame person'
+                ],
+                [
+                    'Horray!',
+                    'You suck!!!'
+                ]
+            ],
+            [
+                ['Begin your journy','Wimp out like a lame person2'],
+                ['Horray!','You suck!!!2']
+            ],
+        ]
+
 while game:
+    print narritive_dictionary[choiceCounter][0][0]
+    print narritive_dictionary[choiceCounter][0][1]
+    print
+
     user_input.user_input()
+
+    choiceCounter += 1
 
 
 
