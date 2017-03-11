@@ -18,23 +18,12 @@ introtxt.close()
 
 # Define globals
 game = True
-choiceCounter = 0
+choice_counter = 0
+player_class = PlayerClass()
 
-p = PlayerClass()
-
-choice1Array = ['Begin your journy',
-                'Equip yourself']
-
-choice2Array = ['Wimp out like a lame person',
-                'Get going']
-
-choice1ResponseArray = ['Horray!' ,
-                        '{store}']
-
-choice2ResponseArray = ['You suck!!!',
-                        'You\'re heading out of town']
 def user_choice():
 
+    cls()
     narritive_dictionary = [
                 [
                     [
@@ -47,13 +36,19 @@ def user_choice():
                     ]
                 ],
                 [
-                    ['Begin your journy2','Wimp out like a lame person2'],
-                    ['Horray!','You suck!!!2']
+                    [
+                        'Equip yourself',
+                        '{store}'
+                    ],
+                    [
+                        'Get going',
+                        'You\'re heading out of town'
+                    ]
                 ],
             ]
 
-    print narritive_dictionary[choiceCounter][0][0]
-    print narritive_dictionary[choiceCounter][1][0]
+    print narritive_dictionary[choice_counter][0][0]
+    print narritive_dictionary[choice_counter][1][0]
     print
 
     input_result = user_input.user_input()
@@ -62,13 +57,16 @@ def user_choice():
         print input_result
 
     if isinstance(input_result, int):
-        print narritive_dictionary[choiceCounter][input_result][1]
+        print narritive_dictionary[choice_counter][input_result][1]
+
+    print 'Press "c" to continue'
+    user_input.user_input()
 
 
 
 while game:
     user_choice()
-    choiceCounter += 1
+    choice_counter += 1
 
 
 
@@ -79,14 +77,14 @@ while game:
     # # clear the screen
     # cls()
     # # If there are no more choices
-    # if choiceCounter >= len(choice1Array):
+    # if choice_counter >= len(choice1Array):
     #     game = False
     #     print 'Game over'
     #     quit()
     #
     # print 'Oh mighty hero, will you?'
-    # print '1)', choice1Array[choiceCounter]
-    # print '2)', choice2Array[choiceCounter]
+    # print '1)', choice1Array[choice_counter]
+    # print '2)', choice2Array[choice_counter]
     # print
     #
     # # User should be able to choose between two choices
@@ -99,7 +97,7 @@ while game:
     #     # clear the screen
     #     cls()
     #     if userChoice == '1':
-    #         if choice1ResponseArray[choiceCounter] == '{store}':
+    #         if choice1ResponseArray[choice_counter] == '{store}':
     #             new_store = storeClass()
     #             new_store.createStore()
     #             new_item = new_store.get_purchased_item()
@@ -109,8 +107,8 @@ while game:
     #
     #             userChoice = raw_input('What will you decide: ')
     #         else:
-    #             print choice1ResponseArray[choiceCounter]
-    #             choiceCounter += 1
+    #             print choice1ResponseArray[choice_counter]
+    #             choice_counter += 1
     #     else:
-    #         print choice2ResponseArray[choiceCounter]
-    #         choiceCounter += 1
+    #         print choice2ResponseArray[choice_counter]
+    #         choice_counter += 1
