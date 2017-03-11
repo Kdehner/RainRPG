@@ -7,9 +7,7 @@ class Item(object):
 
 class storeClass:
     from Player import PlayerClass
-    from Input import UserInputClass
 
-    user_input = UserInputClass().user_input
     purchased_item = None
 
     # Set up length vars
