@@ -18,10 +18,10 @@ introtxt.close()
 
 # Define globals
 game = True
+choiceCounter = 0
 
 p = PlayerClass()
 
-choiceCounter = 0
 choice1Array = ['Begin your journy',
                 'Equip yourself']
 
@@ -33,33 +33,42 @@ choice1ResponseArray = ['Horray!' ,
 
 choice2ResponseArray = ['You suck!!!',
                         'You\'re heading out of town']
+def user_choice():
 
-narritive_dictionary = [
-            [
+    narritive_dictionary = [
                 [
-                    'Begin your journy',
-                    'Wimp out like a lame person'
+                    [
+                        'Begin your journy',
+                        'Horray!'
+                    ],
+                    [
+                        'Wimp out like a lame person',
+                        'You suck!!!'
+                    ]
                 ],
                 [
-                    'Horray!',
-                    'You suck!!!'
-                ]
-            ],
-            [
-                ['Begin your journy','Wimp out like a lame person2'],
-                ['Horray!','You suck!!!2']
-            ],
-        ]
+                    ['Begin your journy2','Wimp out like a lame person2'],
+                    ['Horray!','You suck!!!2']
+                ],
+            ]
 
-while game:
     print narritive_dictionary[choiceCounter][0][0]
-    print narritive_dictionary[choiceCounter][0][1]
+    print narritive_dictionary[choiceCounter][1][0]
     print
 
-    user_input.user_input()
+    input_result = user_input.user_input()
 
+    if isinstance(input_result, str):
+        print input_result
+
+    if isinstance(input_result, int):
+        print narritive_dictionary[choiceCounter][input_result][1]
+
+
+
+while game:
+    user_choice()
     choiceCounter += 1
-
 
 
 
