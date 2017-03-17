@@ -29,6 +29,7 @@ class PlayerClass:
         if item_purchased is True and item_type is 'offence':
             self.attack += 1
             print self.attack
+            print self.log_gold()
 
         #If item is defence add defence point
         elif item_purchased is True and item_type is 'defence':
@@ -38,7 +39,7 @@ class PlayerClass:
         print 'Health: ' + 'V' * self.health
 
     def log_gold(self):
-        print 'Gold: ' + self.gold
+        return 'Gold: ' + str(self.gold)
 
     def log_stats(self):
         print 'Attack: ' + self.attack

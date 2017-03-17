@@ -1,7 +1,5 @@
 # coding=UTF-8
 # Import files
-from Store import storeClass, Item
-from Player import PlayerClass
 import os
 from narritive import narritive
 
@@ -18,7 +16,6 @@ introtxt.close()
 
 # Define globals
 game = True
-player_class = PlayerClass()
 narritive = narritive()
 
 while game:

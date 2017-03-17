@@ -6,7 +6,8 @@ class Item(object):
         self.cost = cost
 
 class storeClass:
-    from Player import PlayerClass
+    def __init__(self, player):
+        self.player = player
 
     purchased_item = None
 
@@ -46,7 +47,7 @@ class storeClass:
         total_width = self.item_cell_width + self.type_cell_width + self.cost_cell_width + 8
 
         welcome_message = "Welcome to the Shop!"
-        total_gold = "Player Gold: " + str(self.PlayerClass().gold)
+        total_gold = "Player Gold: " + str(self.player.gold)
         welcome_margin = ((total_width - len(welcome_message))/2)
         odd_round = 0 if total_width % 2 == 0 else 1
 
@@ -79,6 +80,6 @@ class storeClass:
         print '+' + '-' * total_width + '+'
         print
 
-        user_choice = self.user_input('Make a selection: ')
+        user_choice = raw_input('Make a selection: ')
         self.set_purchased_item(self.item_list[0])
-        self.PlayerClass().obtain_item(self.purchased_item)
+        self.player.obtain_item(self.purchased_item)
