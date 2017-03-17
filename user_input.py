@@ -13,8 +13,8 @@ def user_input():
     elif user_input == 'quit' or user_input == 'q' or user_input == 'exit':
         quit()
     elif user_input == '1':
-        return 0
+        return '{choice1}'
     elif user_input == '2':
-        return 1
+        return '{choice2}'
     else:
         return 'Invalid Input!'
