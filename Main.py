@@ -3,7 +3,7 @@
 from Store import storeClass, Item
 from Player import PlayerClass
 import os
-import user_input
+from narritive import narritive
 
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
@@ -18,56 +18,11 @@ introtxt.close()
 
 # Define globals
 game = True
-choice_counter = 0
 player_class = PlayerClass()
-
-def user_choice():
-
-    cls()
-    narritive_dictionary = [
-                [
-                    [
-                        'Begin your journy',
-                        'Horray!'
-                    ],
-                    [
-                        'Wimp out like a lame person',
-                        'You suck!!!'
-                    ]
-                ],
-                [
-                    [
-                        'Equip yourself',
-                        '{store}'
-                    ],
-                    [
-                        'Get going',
-                        'You\'re heading out of town'
-                    ]
-                ],
-            ]
-
-    print narritive_dictionary[choice_counter][0][0]
-    print narritive_dictionary[choice_counter][1][0]
-    print
-
-    input_result = user_input.user_input()
-
-    if isinstance(input_result, str):
-        print input_result
-
-    if isinstance(input_result, int):
-        print narritive_dictionary[choice_counter][input_result][1]
-
-    print 'Press "c" to continue'
-    user_input.user_input()
-
-
+narritive = narritive()
 
 while game:
-    user_choice()
-    choice_counter += 1
-
+    narritive.user_choice()
 
 
 

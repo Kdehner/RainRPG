@@ -1,7 +1,9 @@
+
 def user_help():
     return 'This is player help'
 
 def user_input():
+    import narritive
     user_input = raw_input('> ').lower()
 
     if user_input == 'help':
