@@ -1,7 +1,7 @@
 # coding=UTF-8
 class PlayerClass:
 
-    health = 20
+    health = 10
     gold = 100
     attack = 1
     defence = 1
