@@ -1,25 +1,17 @@
 # coding=UTF-8
 # Import files
 import os
+
 from narritive import narritive
 
-def cls():
-    os.system('cls' if os.name=='nt' else 'clear')
-
-# Open Text Files
-introtxt = open('Intro.txt', 'r')
-
-# Intro text
-for line in introtxt:
-    print line,
-introtxt.close()
-
 # Define globals
-game = True
 narritive = narritive()
 
-while game:
+def game():
     narritive.user_choice()
+
+while True:
+    game()
 
 
 
