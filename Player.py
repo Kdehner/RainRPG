@@ -42,8 +42,8 @@ class PlayerClass:
         return 'Gold: ' + str(self.gold)
 
     def log_stats(self):
-        print 'Attack: ' + self.attack
-        print 'Defence: ' + self.defence
+        return 'Attack: ' + self.attack
+        return 'Defence: ' + self.defence
 
     def log_person(self):
         log_person_width = 20
