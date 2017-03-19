@@ -33,8 +33,8 @@ class narritive():
                 ],
                 [
                     [
-                        'Equip yourself',
-                        '{store}'
+                        'Fight Monster',
+                        '{combat}'
                     ],
                     [
                         'Get going',
