@@ -6,8 +6,10 @@ class Item(object):
         self.cost = cost
 
 class storeClass:
-    def __init__(self, player):
-        self.player = player
+    import router
+
+    def __init__(self):
+        self.player = self.router.get_instance('player')
 
     purchased_item = None
 
