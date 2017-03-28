@@ -1,6 +1,6 @@
 # coding=UTF-8
 # Import files
-import os
+import time
 
 from narritive import narritive
 
@@ -9,7 +9,7 @@ narritive = narritive()
 
 def game():
     narritive.user_choice()
-
+    time.sleep(3)
 while True:
     game()
 

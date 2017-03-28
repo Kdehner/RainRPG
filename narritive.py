@@ -64,6 +64,3 @@ class narritive():
         input_result = user_input.user_input()
         print router.take_input(input_result, self.narritive_list, self.choice_counter)
         self.choice_counter+=1
-
-        print 'Press "c" to continue'
-        user_input.user_input()
