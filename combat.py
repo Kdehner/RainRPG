@@ -1,4 +1,4 @@
-from monster import Monster
+from Monster import Monster
 
 class Combat():
     import router
