@@ -1,7 +1,11 @@
 import user_input
 import router
 import os
+import sys
+
+
 from Player import PlayerClass
+
 
 class narritive():
 
@@ -57,9 +61,13 @@ class narritive():
     def user_choice(self):
 
         self.cls()
-        print self.narritive_list[self.choice_counter][0][0]
-        print self.narritive_list[self.choice_counter][1][0]
-        print
+        try:
+            print self.narritive_list[self.choice_counter][0][0]
+            print self.narritive_list[self.choice_counter][1][0]
+            print
+        except IndexError:
+            print 'No more Choices'
+            sys.exit()
 
         input_result = user_input.user_input()
         print router.take_input(input_result, self.narritive_list, self.choice_counter)
